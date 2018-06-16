@@ -19,7 +19,7 @@ const app = express();
 const users = require('./routes/users');
 const port = 1234;
 
-// Set static folder for client side files
+// Set static folder for front end files
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors());
@@ -36,8 +36,8 @@ app.get('/', (req, res) => {
     res.send('Invalid endpoint');
 });
 
-app.get('/hi', (req, res) => {
-    res.send('Hello');
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 // Start server
