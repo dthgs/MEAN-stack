@@ -11,7 +11,6 @@ import { timeout } from 'q';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
   name: String;
   username: String;
   email: String;
@@ -38,6 +37,7 @@ export class RegisterComponent implements OnInit {
     // Required Fields
     if(!this.validateService.validateRegister(user)){
       this.flashMessage.show('Please fill in all fields', {cssClass: 'alert-danger', timeout: 3000});
+      return false;
     }
 
     // Validate Email
@@ -49,14 +49,17 @@ export class RegisterComponent implements OnInit {
     // Register User
     this.authService.registerUser(user).subscribe(data => {
       if(data.success){
-        this.flashMessage.show('You are now registered', {cssClass: 'alert-success', timeout: 3000});
+        this.flashMessage.show('You are now registered', {
+          cssClass: 'alert-success', 
+          timeout: 3000});
         this.router.navigate(['/login']);
       } else {
-        this.flashMessage.show('Something went wrong', {cssClass: 'alert-danger', timeout: 3000});
+        this.flashMessage.show('Something went wrong', {
+          cssClass: 'alert-danger', 
+          timeout: 3000});
         this.router.navigate(['/register']);
       }
     });
-
   }
 
 }
