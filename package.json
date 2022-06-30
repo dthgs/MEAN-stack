@@ -14,7 +14,7 @@
     "cors": "*",
     "jsonwebtoken": "*",
     "body-parser": "*",
-    "passport": "*",
+    "passport": "0.6.0",
     "passport-jwt": "*"
   },
   "author": "Dan",
