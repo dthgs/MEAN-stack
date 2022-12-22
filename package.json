@@ -12,7 +12,7 @@
     "mongoose": "*",
     "bcryptjs": "*",
     "cors": "*",
-    "jsonwebtoken": "*",
+    "jsonwebtoken": "9.0.0",
     "body-parser": "*",
     "passport": "*",
     "passport-jwt": "*"
