@@ -15,7 +15,7 @@
     "jsonwebtoken": "*",
     "body-parser": "*",
     "passport": "*",
-    "passport-jwt": "*"
+    "passport-jwt": "4.0.1"
   },
   "author": "Dan",
   "license": "ISC"
